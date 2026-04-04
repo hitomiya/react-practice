@@ -1,10 +1,249 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>GitとGitHub練習ページ</title>
-    </head>
-    <body>
-        <h1>初めてのコミットです！</h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テスト整備工場</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+            background: #f8f9fa;
+            line-height: 1.8;
+        }
+
+        /* ヘッダー */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a5276;
+            letter-spacing: 0.05em;
+        }
+
+        nav a {
+            color: #555;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #1a5276;
+        }
+
+        /* ヒーロー */
+        .hero {
+            background: linear-gradient(135deg, #1a5276 0%, #2e86c1 60%, #5dade2 100%);
+            color: #fff;
+            text-align: center;
+            padding: 100px 24px;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.08em;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* セクション共通 */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #777;
+            margin-bottom: 48px;
+            font-size: 0.95rem;
+        }
+
+        /* サービスカード */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 36px 28px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            color: #1a5276;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* フッター */
+        footer {
+            background: #1a5276;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            padding: 40px 24px;
+            margin-top: 40px;
+        }
+
+        footer .footer-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        footer .copy {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 64px 20px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin-left: 16px;
+            }
+
+            nav a:first-child {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">テスト整備工場</div>
+        <nav>
+            <a href="#services">事業内容</a>
+            <a href="#contact">お問い合わせ</a>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <h1>テスト整備工場</h1>
+    <p>ローリーの新規架装・載せ替え、フォークリフト・クレーンの点検整備を専門に行っています。</p>
+</div>
+
+<section id="services">
+    <h2 class="section-title">事業内容</h2>
+    <p class="section-sub">Service</p>
+
+    <div class="services">
+        <div class="card">
+            <div class="card-icon">🚛</div>
+            <h3>ローリー載せ替え</h3>
+            <p>タンクローリーの新規架装および載せ替えを行います。お客様のご要望に合わせた仕様で対応いたします。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🔧</div>
+            <h3>フォークリフトの点検整備</h3>
+            <p>フォークリフトの定期点検・整備を実施。安全な稼働をサポートいたします。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📋</div>
+            <h3>フォークリフトのレンタル</h3>
+            <p>必要な期間だけご利用いただけるフォークリフトのレンタルサービスを提供しています。</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏗️</div>
+            <h3>クレーン点検整備</h3>
+            <p>各種クレーンの定期点検・整備を行い、安全な作業環境の維持をお手伝いします。</p>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <p class="footer-name">テスト整備工場</p>
+    <p>〒000-0000 東京都○○区○○町 1-2-3</p>
+    <p>TEL: 00-0000-0000</p>
+    <p class="copy">&copy; 2026 テスト整備工場</p>
+</footer>
+
+</body>
 </html>
