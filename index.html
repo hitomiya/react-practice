@@ -1,10 +1,146 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>GitとGitHub練習ページ</title>
-    </head>
-    <body>
-        <h1>初めてのコミットです！</h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テスト太郎 | AI エンジニア</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+            background: #0f0f1a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            padding: 48px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                        0 0 40px rgba(99, 102, 241, 0.1);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+            margin: 0 auto 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .role {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        .bio {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #a0a0b8;
+            margin-bottom: 32px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .skill-tag {
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a78bfa;
+            font-size: 13px;
+            padding: 6px 16px;
+            border-radius: 12px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0a0b8;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.2s;
+        }
+
+        .links a:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.5);
+            color: #a78bfa;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="avatar">T</div>
+        <h1 class="name">テスト太郎</h1>
+        <span class="role">AI エンジニア</span>
+        <p class="bio">
+            機械学習と自然言語処理を専門とするAIエンジニア。<br>
+            最新技術を活用して、人々の生活を豊かにするプロダクトを開発しています。
+        </p>
+        <div class="skills">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">LLM</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">MLOps</span>
+        </div>
+        <div class="links">
+            <a href="#" title="GitHub">GH</a>
+            <a href="#" title="Twitter">X</a>
+            <a href="#" title="Blog">B</a>
+        </div>
+    </div>
+</body>
 </html>
