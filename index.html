@@ -13,6 +13,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -20,6 +21,7 @@
             color: #333;
             background: #fff;
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
         /* ========== ヘッダー ========== */
@@ -191,6 +193,7 @@
             top: 0;
             bottom: 0;
             width: 40%;
+            max-width: 100%;
             background: linear-gradient(180deg, rgba(44, 64, 112, 0.5) 0%, rgba(27, 42, 74, 0) 100%);
             z-index: 0;
         }
@@ -263,6 +266,7 @@
         .service-item:nth-child(2) .service-visual { background: linear-gradient(135deg, #eae8f1 0%, #d5d6e6 100%); }
         .service-item:nth-child(3) .service-visual { background: linear-gradient(135deg, #e8f1ee 0%, #d5e6de 100%); }
         .service-item:nth-child(4) .service-visual { background: linear-gradient(135deg, #f1ece8 0%, #e6ddd5 100%); }
+        .service-item:nth-child(5) .service-visual { background: linear-gradient(135deg, #e8edf1 0%, #d5dee6 100%); }
 
         .service-icon {
             font-size: 5rem;
@@ -300,15 +304,15 @@
         }
 
         .service-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.7rem;
             color: #1b2a4a;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             letter-spacing: 0.05em;
             font-weight: 700;
         }
 
         .service-content .service-num-text {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: #1b2a4a;
             letter-spacing: 0.15em;
             font-weight: 600;
@@ -316,7 +320,7 @@
         }
 
         .service-content .service-en {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: #999;
             letter-spacing: 0.15em;
             text-transform: uppercase;
@@ -324,8 +328,8 @@
         }
 
         .service-content p {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 1.05rem;
+            color: #555;
             line-height: 2;
         }
 
@@ -547,8 +551,8 @@
     <div class="hero-accent"></div>
     <div class="hero-inner">
         <div class="hero-label">SINCE 2026</div>
-        <h1>確かな技術で、<br>安全を届ける。</h1>
-        <p class="hero-desc">ローリーの新規架装・載せ替え、フォークリフト・クレーンの点検整備を専門に行っています。豊富な実績と確かな技術で、お客様の事業を支えます。</p>
+        <h1>技術で届ける、<br>安心と安全。</h1>
+        <p class="hero-desc">車検整備からローリー架装、フォークリフト・クレーンの点検整備まで。幅広い対応力で、お客様の事業を支えます。</p>
     </div>
 </div>
 
@@ -562,10 +566,24 @@
     </div>
 
     <div class="service-list">
-        <!-- 01 ローリー載せ替え -->
+        <!-- 01 車検整備 -->
         <div class="service-item">
             <div class="service-content">
                 <p class="service-num-text">01</p>
+                <h3>車検整備</h3>
+                <p class="service-en">Vehicle Inspection &amp; Maintenance</p>
+                <p>自動車の車検・定期点検・一般整備を行っています。お車の安全を確保し、安心してお乗りいただけるよう丁寧に整備いたします。</p>
+            </div>
+            <div class="service-visual">
+                <span class="service-icon">🚗</span>
+                <span class="service-photo-label">PHOTO</span>
+            </div>
+        </div>
+
+        <!-- 02 ローリー載せ替え -->
+        <div class="service-item">
+            <div class="service-content">
+                <p class="service-num-text">02</p>
                 <h3>ローリー載せ替え</h3>
                 <p class="service-en">Tank Lorry Replacement</p>
                 <p>タンクローリーの新規架装および載せ替えを行っています。お客様のご要望・用途に合わせた仕様で、安全かつ確実に対応いたします。</p>
@@ -576,10 +594,10 @@
             </div>
         </div>
 
-        <!-- 02 フォークリフトの点検整備 -->
+        <!-- 03 フォークリフトの点検整備 -->
         <div class="service-item">
             <div class="service-content">
-                <p class="service-num-text">02</p>
+                <p class="service-num-text">03</p>
                 <h3>フォークリフトの点検整備</h3>
                 <p class="service-en">Forklift Inspection &amp; Maintenance</p>
                 <p>フォークリフトの定期点検・整備を実施しています。法定点検から日常のメンテナンスまで、安全な稼働をサポートいたします。</p>
@@ -590,10 +608,10 @@
             </div>
         </div>
 
-        <!-- 03 フォークリフトのレンタル -->
+        <!-- 04 フォークリフトのレンタル -->
         <div class="service-item">
             <div class="service-content">
-                <p class="service-num-text">03</p>
+                <p class="service-num-text">04</p>
                 <h3>フォークリフトのレンタル</h3>
                 <p class="service-en">Forklift Rental</p>
                 <p>必要な期間だけご利用いただけるフォークリフトのレンタルサービスです。短期から長期まで、お客様の状況に合わせて柔軟に対応いたします。</p>
@@ -604,10 +622,10 @@
             </div>
         </div>
 
-        <!-- 04 クレーン点検整備 -->
+        <!-- 05 クレーン点検整備 -->
         <div class="service-item">
             <div class="service-content">
-                <p class="service-num-text">04</p>
+                <p class="service-num-text">05</p>
                 <h3>クレーン点検整備</h3>
                 <p class="service-en">Crane Inspection &amp; Maintenance</p>
                 <p>各種クレーンの定期点検・整備を行っています。安全な作業環境の維持と、設備の長寿命化をお手伝いいたします。</p>
@@ -650,7 +668,7 @@
             </tr>
             <tr>
                 <th>事業内容</th>
-                <td>ローリー新規架装・載せ替え<br>フォークリフト点検整備・レンタル<br>クレーン点検整備</td>
+                <td>車検整備<br>ローリー新規架装・載せ替え<br>フォークリフト点検整備・レンタル<br>クレーン点検整備</td>
             </tr>
         </table>
     </div>
