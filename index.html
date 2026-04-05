@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テスト整備工場</title>
+    <title>テスト整備工場 | ローリー架装・フォークリフト・クレーン整備</title>
     <style>
         * {
             margin: 0;
@@ -11,17 +11,21 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             color: #333;
-            background: #f8f9fa;
+            background: #fff;
             line-height: 1.8;
         }
 
-        /* ヘッダー */
+        /* ========== ヘッダー ========== */
         header {
             background: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -30,219 +34,620 @@
         .header-inner {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 16px 24px;
+            padding: 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 72px;
         }
 
         .logo {
-            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #1b2a4a;
+        }
+
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            background: #1b2a4a;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: -0.05em;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
             font-weight: 700;
-            color: #1a5276;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
         }
 
         nav a {
             color: #555;
             text-decoration: none;
-            margin-left: 24px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
+            letter-spacing: 0.05em;
             transition: color 0.2s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1b2a4a;
+            transition: width 0.3s;
         }
 
         nav a:hover {
-            color: #1a5276;
+            color: #1b2a4a;
         }
 
-        /* ヒーロー */
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-contact {
+            background: #1b2a4a;
+            color: #fff !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+
+        .nav-contact::after {
+            display: none;
+        }
+
+        .nav-contact:hover {
+            background: #2c4070;
+            color: #fff !important;
+        }
+
+        /* ========== ヒーロー ========== */
         .hero {
-            background: linear-gradient(135deg, #1a5276 0%, #2e86c1 60%, #5dade2 100%);
-            color: #fff;
-            text-align: center;
-            padding: 100px 24px;
+            background: #1b2a4a;
+            position: relative;
+            overflow: hidden;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
         }
 
-        .hero h1 {
-            font-size: 2.6rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: 0.08em;
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(135deg, rgba(27, 42, 74, 0.97) 0%, rgba(27, 42, 74, 0.85) 100%),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(255, 255, 255, 0.02) 40px,
+                    rgba(255, 255, 255, 0.02) 80px
+                );
         }
 
-        .hero p {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* セクション共通 */
-        section {
+        .hero-inner {
             max-width: 1100px;
             margin: 0 auto;
             padding: 80px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 4px 16px;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            border-radius: 2px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .hero-desc {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            max-width: 520px;
+            line-height: 2;
+        }
+
+        .hero-accent {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background: linear-gradient(180deg, rgba(44, 64, 112, 0.5) 0%, rgba(27, 42, 74, 0) 100%);
+            z-index: 0;
+        }
+
+        /* ========== セクション共通 ========== */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        .section-header {
+            margin-bottom: 56px;
+        }
+
+        .section-en {
+            font-size: 0.7rem;
+            color: #1b2a4a;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
         .section-title {
-            text-align: center;
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1a5276;
-            margin-bottom: 12px;
+            color: #1b2a4a;
+            letter-spacing: 0.05em;
         }
 
-        .section-sub {
-            text-align: center;
-            color: #777;
-            margin-bottom: 48px;
-            font-size: 0.95rem;
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: #1b2a4a;
+            margin-top: 16px;
         }
 
-        /* サービスカード */
-        .services {
+        /* ========== サービス一覧 ========== */
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .service-item {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 28px;
+            grid-template-columns: 1fr 1fr;
+            min-height: 360px;
+            border-bottom: 1px solid #e8e8e8;
         }
 
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 36px 28px;
-            text-align: center;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-            transition: transform 0.25s, box-shadow 0.25s;
+        .service-item:first-child {
+            border-top: 1px solid #e8e8e8;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+        .service-item:nth-child(even) {
+            direction: rtl;
         }
 
-        .card-icon {
-            font-size: 2.8rem;
-            margin-bottom: 16px;
+        .service-item:nth-child(even) > * {
+            direction: ltr;
         }
 
-        .card h3 {
-            font-size: 1.15rem;
-            color: #1a5276;
-            margin-bottom: 12px;
+        .service-visual {
+            background: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .card p {
+        .service-item:nth-child(1) .service-visual { background: linear-gradient(135deg, #e8ecf1 0%, #d5dce6 100%); }
+        .service-item:nth-child(2) .service-visual { background: linear-gradient(135deg, #eae8f1 0%, #d5d6e6 100%); }
+        .service-item:nth-child(3) .service-visual { background: linear-gradient(135deg, #e8f1ee 0%, #d5e6de 100%); }
+        .service-item:nth-child(4) .service-visual { background: linear-gradient(135deg, #f1ece8 0%, #e6ddd5 100%); }
+
+        .service-icon {
+            font-size: 5rem;
+            opacity: 0.7;
+        }
+
+        .service-num {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 0.7rem;
+            color: #1b2a4a;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+
+        .service-item:nth-child(even) .service-num {
+            left: auto;
+            right: 20px;
+        }
+
+        .service-content {
+            padding: 48px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            color: #1b2a4a;
+            margin-bottom: 6px;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        .service-content .service-en {
+            font-size: 0.7rem;
+            color: #999;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .service-content p {
             font-size: 0.9rem;
             color: #666;
-            line-height: 1.7;
+            line-height: 2;
         }
 
-        /* フッター */
-        footer {
-            background: #1a5276;
-            color: rgba(255, 255, 255, 0.85);
-            text-align: center;
-            padding: 40px 24px;
-            margin-top: 40px;
+        /* ========== 会社概要 ========== */
+        .about-bg {
+            background: #f7f8fa;
         }
 
-        footer .footer-name {
-            font-size: 1.1rem;
+        .about-table {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .about-table tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .about-table th,
+        .about-table td {
+            padding: 18px 0;
+            font-size: 0.9rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .about-table th {
+            width: 140px;
+            color: #1b2a4a;
             font-weight: 600;
-            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .about-table td {
+            color: #555;
+        }
+
+        /* ========== お問い合わせ ========== */
+        .contact-section {
+            background: #1b2a4a;
+            color: #fff;
+            text-align: center;
+            padding: 80px 24px;
+        }
+
+        .contact-section .section-en {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-section .section-title {
             color: #fff;
         }
 
-        footer p {
-            font-size: 0.85rem;
+        .contact-section .section-title::after {
+            background: rgba(255, 255, 255, 0.4);
+            margin: 16px auto 0;
+        }
+
+        .contact-section .section-header {
+            margin-bottom: 32px;
+        }
+
+        .contact-tel {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .contact-tel-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.1em;
             margin-bottom: 4px;
         }
 
-        footer .copy {
-            margin-top: 20px;
-            font-size: 0.75rem;
-            opacity: 0.6;
+        .contact-hours {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
         }
 
-        /* レスポンシブ */
-        @media (max-width: 600px) {
+        /* ========== フッター ========== */
+        footer {
+            background: #141e33;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 40px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.08em;
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* ========== ハンバーガー (モバイル) ========== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #1b2a4a;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        /* ========== レスポンシブ ========== */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: 1.8rem;
             }
 
-            .hero {
-                padding: 64px 20px;
+            .hero-inner {
+                padding: 60px 24px;
             }
 
-            .header-inner {
+            .hero {
+                min-height: auto;
+            }
+
+            .service-item {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .service-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .service-visual {
+                min-height: 200px;
+            }
+
+            .service-num {
+                left: 20px !important;
+                right: auto !important;
+            }
+
+            .service-content {
+                padding: 32px 24px;
+            }
+
+            .footer-inner {
                 flex-direction: column;
                 gap: 12px;
+                text-align: center;
             }
 
-            nav a {
-                margin-left: 16px;
+            .about-table th {
+                width: 100px;
             }
 
-            nav a:first-child {
-                margin-left: 0;
+            .contact-tel {
+                font-size: 1.6rem;
             }
         }
     </style>
 </head>
 <body>
 
+<!-- ヘッダー -->
 <header>
     <div class="header-inner">
-        <div class="logo">テスト整備工場</div>
+        <a href="#" class="logo">
+            <div class="logo-mark">T</div>
+            <span class="logo-text">テスト整備工場</span>
+        </a>
         <nav>
             <a href="#services">事業内容</a>
-            <a href="#contact">お問い合わせ</a>
+            <a href="#about">会社概要</a>
+            <a href="#contact" class="nav-contact">お問い合わせ</a>
         </nav>
+        <button class="hamburger" aria-label="メニュー">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </header>
 
+<!-- ヒーロー -->
 <div class="hero">
-    <h1>テスト整備工場</h1>
-    <p>ローリーの新規架装・載せ替え、フォークリフト・クレーンの点検整備を専門に行っています。</p>
+    <div class="hero-accent"></div>
+    <div class="hero-inner">
+        <div class="hero-label">SINCE 2026</div>
+        <h1>確かな技術で、<br>安全を届ける。</h1>
+        <p class="hero-desc">ローリーの新規架装・載せ替え、フォークリフト・クレーンの点検整備を専門に行う整備工場です。豊富な実績と確かな技術で、お客様の事業を支えます。</p>
+    </div>
 </div>
 
-<section id="services">
-    <h2 class="section-title">事業内容</h2>
-    <p class="section-sub">Service</p>
-
-    <div class="services">
-        <div class="card">
-            <div class="card-icon">🚛</div>
-            <h3>ローリー載せ替え</h3>
-            <p>タンクローリーの新規架装および載せ替えを行います。お客様のご要望に合わせた仕様で対応いたします。</p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🔧</div>
-            <h3>フォークリフトの点検整備</h3>
-            <p>フォークリフトの定期点検・整備を実施。安全な稼働をサポートいたします。</p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">📋</div>
-            <h3>フォークリフトのレンタル</h3>
-            <p>必要な期間だけご利用いただけるフォークリフトのレンタルサービスを提供しています。</p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🏗️</div>
-            <h3>クレーン点検整備</h3>
-            <p>各種クレーンの定期点検・整備を行い、安全な作業環境の維持をお手伝いします。</p>
+<!-- 事業内容 -->
+<div id="services">
+    <div class="section">
+        <div class="section-header">
+            <p class="section-en">Service</p>
+            <h2 class="section-title">事業内容</h2>
         </div>
     </div>
-</section>
 
-<footer id="contact">
-    <p class="footer-name">テスト整備工場</p>
-    <p>〒000-0000 東京都○○区○○町 1-2-3</p>
-    <p>TEL: 00-0000-0000</p>
-    <p class="copy">&copy; 2026 テスト整備工場</p>
+    <div class="service-list">
+        <!-- 01 ローリー載せ替え -->
+        <div class="service-item">
+            <div class="service-visual">
+                <span class="service-num">01</span>
+                <span class="service-icon">🚛</span>
+            </div>
+            <div class="service-content">
+                <h3>ローリー載せ替え</h3>
+                <p class="service-en">Tank Lorry Replacement</p>
+                <p>タンクローリーの新規架装および載せ替えを行っています。お客様のご要望・用途に合わせた仕様で、安全かつ確実に対応いたします。</p>
+            </div>
+        </div>
+
+        <!-- 02 フォークリフトの点検整備 -->
+        <div class="service-item">
+            <div class="service-visual">
+                <span class="service-num">02</span>
+                <span class="service-icon">🔧</span>
+            </div>
+            <div class="service-content">
+                <h3>フォークリフトの点検整備</h3>
+                <p class="service-en">Forklift Inspection &amp; Maintenance</p>
+                <p>フォークリフトの定期点検・整備を実施しています。法定点検から日常のメンテナンスまで、安全な稼働をサポートいたします。</p>
+            </div>
+        </div>
+
+        <!-- 03 フォークリフトのレンタル -->
+        <div class="service-item">
+            <div class="service-visual">
+                <span class="service-num">03</span>
+                <span class="service-icon">📋</span>
+            </div>
+            <div class="service-content">
+                <h3>フォークリフトのレンタル</h3>
+                <p class="service-en">Forklift Rental</p>
+                <p>必要な期間だけご利用いただけるフォークリフトのレンタルサービスです。短期から長期まで、お客様の状況に合わせて柔軟に対応いたします。</p>
+            </div>
+        </div>
+
+        <!-- 04 クレーン点検整備 -->
+        <div class="service-item">
+            <div class="service-visual">
+                <span class="service-num">04</span>
+                <span class="service-icon">🏗️</span>
+            </div>
+            <div class="service-content">
+                <h3>クレーン点検整備</h3>
+                <p class="service-en">Crane Inspection &amp; Maintenance</p>
+                <p>各種クレーンの定期点検・整備を行っています。安全な作業環境の維持と、設備の長寿命化をお手伝いいたします。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 会社概要 -->
+<div class="about-bg" id="about">
+    <div class="section">
+        <div class="section-header">
+            <p class="section-en">Company</p>
+            <h2 class="section-title">会社概要</h2>
+        </div>
+        <table class="about-table">
+            <tr>
+                <th>会社名</th>
+                <td>テスト整備工場</td>
+            </tr>
+            <tr>
+                <th>代表者</th>
+                <td>テスト太郎</td>
+            </tr>
+            <tr>
+                <th>所在地</th>
+                <td>〒000-0000 東京都○○区○○町 1-2-3</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>00-0000-0000</td>
+            </tr>
+            <tr>
+                <th>事業内容</th>
+                <td>ローリー新規架装・載せ替え<br>フォークリフト点検整備・レンタル<br>クレーン点検整備</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- お問い合わせ -->
+<div class="contact-section" id="contact">
+    <div class="section-header">
+        <p class="section-en">Contact</p>
+        <h2 class="section-title">お問い合わせ</h2>
+    </div>
+    <p class="contact-tel-label">お電話でのお問い合わせ</p>
+    <p class="contact-tel">00-0000-0000</p>
+    <p class="contact-hours">受付時間：平日 8:00〜17:00</p>
+</div>
+
+<!-- フッター -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">テスト整備工場</div>
+        <div class="footer-copy">&copy; 2026 テスト整備工場 All Rights Reserved.</div>
+    </div>
 </footer>
 
 </body>
