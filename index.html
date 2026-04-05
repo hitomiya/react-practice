@@ -124,6 +124,26 @@
             color: #fff !important;
         }
 
+        /* ========== アニメーション ========== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-inner {
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+        }
+
+        .hero-shisa {
+            animation: fadeInUp 1.2s ease-out 0.8s both;
+        }
+
         /* ========== ヒーロー ========== */
         .hero {
             background: #2563eb;
@@ -173,11 +193,11 @@
 
         .hero h1 {
             color: #fff;
-            font-size: 2.8rem;
+            font-size: 4.2rem;
             font-weight: 700;
             letter-spacing: 0.1em;
             margin-bottom: 24px;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
         .hero-desc {
@@ -290,6 +310,11 @@
             overflow: hidden;
             border-radius: 4px;
             min-height: 220px;
+            transition: transform 0.4s ease;
+        }
+
+        .service-visual:hover {
+            transform: scale(1.05);
         }
 
         .service-item:nth-child(1) .service-visual { background: linear-gradient(135deg, #e8ecf1 0%, #d5dce6 100%); }
@@ -452,6 +477,53 @@
             transition: transform 0.3s, opacity 0.3s;
         }
 
+        /* ========== シーサー装飾 ========== */
+        .shisa {
+            display: inline-block;
+        }
+
+        .shisa svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .hero-shisa {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            z-index: 1;
+            opacity: 0.25;
+        }
+
+        .hero-shisa svg {
+            width: 120px;
+            height: 120px;
+        }
+
+        .section-shisa {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 12px;
+        }
+
+        .section-shisa svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .footer-shisa {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 12px;
+        }
+
+        .footer-shisa svg {
+            width: 40px;
+            height: 40px;
+            opacity: 0.5;
+        }
+
         /* ========== レスポンシブ ========== */
         @media (max-width: 768px) {
             .hamburger {
@@ -463,7 +535,7 @@
             }
 
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2.4rem;
             }
 
             .hero-inner {
@@ -533,6 +605,29 @@
     <div class="hero-inner">
         <h1>技術で届ける、<br>安心と安全。</h1>
         <p class="hero-desc">車検整備からローリー架装、フォークリフト・クレーンの点検整備まで。幅広い対応力で、お客様の事業を支えます。</p>
+    </div>
+    <!-- ヒーロー右下のシーサー（阿） -->
+    <div class="hero-shisa">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="52" r="32" fill="#fff"/>
+            <ellipse cx="36" cy="68" rx="10" ry="14" fill="#fff"/>
+            <ellipse cx="64" cy="68" rx="10" ry="14" fill="#fff"/>
+            <circle cx="50" cy="48" r="26" fill="#fff"/>
+            <ellipse cx="35" cy="35" rx="8" ry="12" fill="#fff" transform="rotate(-15 35 35)"/>
+            <ellipse cx="65" cy="35" rx="8" ry="12" fill="#fff" transform="rotate(15 65 35)"/>
+            <path d="M32 35 Q35 25 40 33" stroke="#2563eb" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M68 35 Q65 25 60 33" stroke="#2563eb" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="40" cy="44" r="5" fill="#2563eb"/>
+            <circle cx="60" cy="44" r="5" fill="#2563eb"/>
+            <circle cx="41.5" cy="43" r="2" fill="#fff"/>
+            <circle cx="61.5" cy="43" r="2" fill="#fff"/>
+            <ellipse cx="50" cy="52" rx="4" ry="3" fill="#f59e0b"/>
+            <path d="M38 58 Q44 66 50 62 Q56 66 62 58" stroke="#2563eb" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M38 58 Q42 55 46 58" stroke="#2563eb" stroke-width="1.5" fill="none"/>
+            <path d="M54 58 Q58 55 62 58" stroke="#2563eb" stroke-width="1.5" fill="none"/>
+            <path d="M25 30 Q20 18 30 22 Q28 12 38 18" stroke="#2563eb" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M75 30 Q80 18 70 22 Q72 12 62 18" stroke="#2563eb" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
     </div>
 </div>
 
